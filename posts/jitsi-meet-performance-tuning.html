@@ -32,13 +32,15 @@ Used a server with 4 CPU cores and 4GB of RAM, the utilization of both was sligh
 Client tweaks (jitsi-meet)
 </h2>
 
+<p>
+These tweaks mostly disable features and lower bandthwidth to reduce CPU usage and latency
+</p>
+
 <code><p class="title">/etc/jitsi/meet/your.domain-config.js</p>
-// Disable features to lower CPU usage
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
 
-// Reduce bandwidth to lower both latency and CPU usage
 enableLayerSuspension: true,
 resolution: 360,
 maxFps: 10,
@@ -56,13 +58,13 @@ constraints: {
   }
 },
 
-// This is really to help the server if multiple people join at once
+// This is really to help the server
+// in case multiple people join at once
 startAudioMuted: 1,
 startVideoMuted: 1,
 </code>
 
 <code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
-// Disable features to lower CPU usage
 SET_FILMSTRIP_ENABLED: false,
 DISABLE_VIDEO_BACKGROUND: true,
 
@@ -77,8 +79,11 @@ DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 Server tweaks (jitsi-videobridge)
 </h2>
 
+<p>
+This will reduce logging to lower disk I/O operations
+</p>
+
 <code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
-// Reduce logs to lower disk I/O operations
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
