@@ -16,7 +16,7 @@
 
       <h2>UI configuration</h2>
 
-      <code><p class="file">/etc/jitsi/meet/&lt;your-instance&gt;-config.js</p>
+      <code><p class="title">/etc/jitsi/meet/&lt;your-instance&gt;-config.js</p>
 
 // The following options reduce the client's CPU usage
 disableAudioLevels: true,
@@ -46,11 +46,7 @@ startAudioMuted: 1,
 startVideoMuted: 1,
       </code>
 
-      <p>
-      Open up <strong>/usr/share/jitsi-meet/interface_config.js</strong> and modify the following.
-      </p>
-
-      <code>
+      <code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
 // Client CPU cycles saving options
 SET_FILMSTRIP_ENABLED: false,
 DISABLE_VIDEO_BACKGROUND: true,
@@ -64,11 +60,7 @@ DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 
       <h2>Videobridge logging</h2>
 
-      <p>
-      Open up <strong>/etc/jitsi/videobridge/logging.properties</strong> and modify the following.
-      </p>
-
-      <code>
+      <code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
         .level=WARNING
 
         java.util.logging.FileHandler.level = OFF
