@@ -19,7 +19,7 @@
     Open up <strong>/etc/jitsi/meet/<your-instance>-config.js</strong> and modify the following:
     </p>
 
-    <pre>
+    <code>
       // The following options reduce the client's CPU usage
       disableAudioLevels: true,
       enableNoAudioDetection: false,
@@ -47,13 +47,13 @@
       // a lot of people join in at once.
       startAudioMuted: 1,
       startVideoMuted: 1,
-    </pre>
+    </code>
 
     <p>
     Open up <strong>/usr/share/jitsi-meet/interface_config.js</strong> and modify the following.
     </p>
 
-    <pre>
+    <code>
       // Client CPU cycles saving options
       SET_FILMSTRIP_ENABLED: false,
       DISABLE_VIDEO_BACKGROUND: true,
@@ -63,7 +63,7 @@
       // Optional, will help you if you're expecting a lot of people
       // to join/leave the conversation
       DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
-    </pre>
+    </code>
 
     <h2>Videobridge logging</h2>
 
@@ -71,10 +71,10 @@
     Open up <strong>/etc/jitsi/videobridge/logging.properties</strong> and modify the following.
     </p>
 
-    <pre>
+    <code>
       .level=WARNING
 
       java.util.logging.FileHandler.level = OFF
-    </pre>
+    </code>
   </body>
 </html>
