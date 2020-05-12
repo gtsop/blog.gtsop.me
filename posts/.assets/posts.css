@@ -21,13 +21,9 @@ article {
   max-width: 500px;
 }
 
-h2 {
-  font-size: 1.8em;
-}
-
-p {
-  font-size: 1.1em;
-}
+h1 { font-size: 2em; }
+h2 { font-size: 1.5em; }
+h5 { font-size: 0.9em; }
 
 code {
   background-color: var(--code-bg-color);
