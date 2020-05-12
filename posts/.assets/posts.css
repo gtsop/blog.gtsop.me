@@ -1,20 +1,31 @@
 :root {
-  --bg-color: #fff;
-  --fg-color: #14151f;
+  --bg-color: #0b0b14;
+  --fg-color: #8386a5;
+  --code-bg-color: #15151d;
+  --code-fg-color: white;
 }
 
 html, body {
   background-color: var(--bg-color);
   color: var(--fg-color);
+  font-family: Helvetica,Arial,sans-serif;
   font-size: 16px;
-  font-family: Roboto,Helvetica,Arial,sans-serif;
   font-weight: 400;
   line-height: 1.7;
 }
 
 h2 {
-  font-size: 1.8rem;
+  font-size: 1.8em;
 }
 p {
-  font-size: 1.1rem;
+  font-size: 1.1em;
+}
+
+code {
+  background-color: var(--code-bg-color);
+  border-radius: 3px;
+  color: var(--code-fg-color);
+  display: block;
+  font-size: 0.8em;
+  white-space: pre;
 }
