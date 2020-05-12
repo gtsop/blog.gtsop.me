@@ -38,7 +38,9 @@ Client side config (jitsi-meet)
 These disable features and lower bandwidth to reduce CPU usage and latency
 </p>
 
-<code><span class="title">/etc/jitsi/meet/your.domain-config.js</span>
+<div class="code-file">
+<span class="title">/etc/jitsi/meet/your.domain-config.js</span>
+<code>
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
@@ -65,8 +67,11 @@ constraints: {
 startAudioMuted: 1,
 startVideoMuted: 1,
 </code>
+</div>
 
-<code><span class="title">/usr/share/jitsi-meet/interface_config.js</span>
+<div class="code-file">
+<span class="title">/usr/share/jitsi-meet/interface_config.js</span>
+<code>
 SET_FILMSTRIP_ENABLED: false,
 DISABLE_VIDEO_BACKGROUND: true,
 
@@ -75,6 +80,7 @@ DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
 
 DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 </code>
+</div>
 
 <h2>
 <a class="header-link" id="videobridge-logging" href="#videobridge-logging">#</a>
@@ -85,11 +91,14 @@ Server side config (jitsi-videobridge)
 This will reduce logging to lower disk I/O operations
 </p>
 
-<code><span class="title">/etc/jitsi/videobridge/logging.properties</span>
+<div class="code-file">
+<span class="title">/etc/jitsi/videobridge/logging.properties</span>
+<code>
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
 </code>
+</div>
 
 <h2>
 <a class="header-link" id="resources" href="#resources">#</a>

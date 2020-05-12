@@ -27,7 +27,15 @@ h1 { font-size: 2em; line-height: initial; }
 h2 { font-size: 1.4em; }
 h5 { font-size: 0.9em; }
 
-code {
+.code-file .title {
+  background-color: var(--code-title-bg-color);
+  color: var(--code-title-fg-color);
+  margin: 0;
+  display: block;
+  padding: .5em 1em;
+}
+
+.code-file code {
   background-color: var(--code-bg-color);
   color: var(--code-fg-color);
   display: block;
@@ -38,16 +46,6 @@ code {
   white-space: pre-wrap;
 }
 
-code .title {
-  background-color: var(--code-title-bg-color);
-  color: var(--code-title-fg-color);
-  left: 0;
-  margin: 0;
-  padding: .5em 1em;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
 
 a {
   color: var(--link-fg-color);
