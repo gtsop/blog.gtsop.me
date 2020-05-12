@@ -18,10 +18,10 @@ html, body {
 
 article {
   margin: 0 auto;
-  max-width: 500px;
+  max-width: min(700px, 90%);
 }
 
-h1 { font-size: 2em; }
+h1 { font-size: 2em; line-height: initial; }
 h2 { font-size: 1.5em; }
 h5 { font-size: 0.9em; }
 
