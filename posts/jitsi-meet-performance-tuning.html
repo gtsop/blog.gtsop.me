@@ -19,7 +19,7 @@ So, you set up your own Jitsi Meet instance, <a href="https://nerdonthestreet.co
 Bellow is a collection of config tweaks I found on the <a href="https://community.jitsi.org" target="_blank">Jitsi Community Forum</a> which will improve the situation. Using these, I have successfully hosted a couple of conferences (one at a time):
 </p>
 <ul>
-  <li>30 participants, cameras &amp; mics turned on</a>
+  <li>30 participants, cameras &amp; mics turned on</li>
   <li>75+ participants, 2-3 cameras &amp; mics turned on at any given moment.</li>
 </ul>
 
@@ -28,7 +28,7 @@ Used a server with 4 CPU cores and 4GB of RAM, the utilization of both was sligh
 </p>
 
 <h2>
-<a class="header-link" name="client-config" href="#client-config">#</a>
+<a class="header-link" id="client-config" href="#client-config">#</a>
 Client tweaks (jitsi-meet)
 </h2>
 
@@ -36,7 +36,7 @@ Client tweaks (jitsi-meet)
 These tweaks mostly disable features and lower bandwidth to reduce CPU usage and latency
 </p>
 
-<code><p class="title">/etc/jitsi/meet/your.domain-config.js</p>
+<code><span class="title">/etc/jitsi/meet/your.domain-config.js</span>
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
@@ -64,7 +64,7 @@ startAudioMuted: 1,
 startVideoMuted: 1,
 </code>
 
-<code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
+<code><span class="title">/usr/share/jitsi-meet/interface_config.js</span>
 SET_FILMSTRIP_ENABLED: false,
 DISABLE_VIDEO_BACKGROUND: true,
 
@@ -75,7 +75,7 @@ DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 </code>
 
 <h2>
-<a class="header-link" name="videobridge-logging" href="#videobridge-logging">#</a>
+<a class="header-link" id="videobridge-logging" href="#videobridge-logging">#</a>
 Server tweaks (jitsi-videobridge)
 </h2>
 
@@ -83,14 +83,14 @@ Server tweaks (jitsi-videobridge)
 This will reduce logging to lower disk I/O operations
 </p>
 
-<code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
+<code><span class="title">/etc/jitsi/videobridge/logging.properties</span>
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
 </code>
 
 <h2>
-<a class="header-link" name="resources" href="#resources">#</a>
+<a class="header-link" id="resources" href="#resources">#</a>
 Resources
 </h2>
 
