@@ -31,21 +31,19 @@ h5 { font-size: 0.9em; }
 .code-file {
   margin: 2em 0;
   font-family: monospace;
+  font-size: 0.8em;
 }
 .code-file .title {
   background-color: var(--code-title-bg-color);
   color: var(--code-title-fg-color);
-  margin: 0;
   display: block;
   padding: .5em 1em;
-  font-family: monospace;
 }
 
 .code-file code {
   background-color: var(--code-bg-color);
   color: var(--code-fg-color);
   display: block;
-  font-size: 0.8em;
   padding: 0 2em 1em 2em;
   position: relative;
   white-space: pre-wrap;
