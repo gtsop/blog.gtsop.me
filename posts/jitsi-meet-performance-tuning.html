@@ -12,17 +12,19 @@
 <h5>Posted on: <time datetime="2020-05-12">12/05/2020</time></h5>
 
 <p>
-You installed your own Jitsi Meet instance (<a href="https://nerdonthestreet.com/episode/tech/host-a-jitsi-meet-server">like Jacob does here</a>) and now you realised there are performance issues when more than a handfull of people join the same room.
+You set up your own Jitsi Meet instance, <a href="https://nerdonthestreet.com/episode/tech/host-a-jitsi-meet-server" target="_blank">just like Jacob did</a>, but when more than a dozen of people join a room, the conference performance suffers.
 </p>
 
 <p>
-Bellow is a collection of configuration tweaks I found on the jitsi forum which will imporove the performance of the video conference (mainly on the client side)
+Bellow is a collection of config tweaks I found on the <a href="https://community.jitsi.org" target="_blank">Jitsi Community Forum</a> which will improve the situation. Using these, I have successfully hosted:
 </p>
+<ul>
+  <li>a conference with 30 participants, cameras/mics turned on</a>
+  <li>a conference with 75+ participants, 2-3 cameras/mics turned on at a given moment.</li>
+</ul>
 
 <p>
-Using this configuration I have successfully hosted a) a conference with 30 people with cameras/mics turned on and b) a conference with 75+ people durring which only 2-3 cameras where turned on at a given moment.
-
-About 2-4 cores and 2-4GB of RAM did the job on the server.
+Used a server with 4 CPU cores and 4GB of RAM, the utilization of both was slightly above 50%.
 </p>
 
 <h2>
@@ -76,11 +78,29 @@ Server tweaks (jitsi-videobridge):
 </h2>
 
 <code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
-// Reduce the amount of log to lower disk I/O operations
+// Reduce logs to lower disk I/O operations
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
 </code>
+
+<h2>
+<a class="header-link" name="resources" href="#resources">#</a>
+Resources:
+</h2>
+
+<ul>
+  <li>
+    <a href="https://community.jitsi.org/t/adjust-resolution/23984/2" target="_blank">
+      Jitsi Community Forum: Adjust resolution
+    </a>
+  </li>
+  <li>
+    <a href="https://community.jitsi.org/t/reducing-resource-usage-to-improve-performance-both-client-side-and-server-side/39891" target="_blank">
+      Jitsi Community Forum: Reducing resource usage to improve performance (both client-side and server-side)
+    </a>
+  </li>
+</ul>
 
 </article>
 </body>

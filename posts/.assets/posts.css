@@ -1,10 +1,11 @@
 :root {
-  --bg-color: #0b0b14;
-  --fg-color: #85869a;
+  --bg-color: #080811;
+  --fg-color: #dededee9;
   --code-bg-color: #15151d;
   --code-fg-color: #b4b4b4;
   --code-title-bg-color: #1f1f2e;
   --code-title-fg-color: #d19a36;
+  --link-fg-color: #8d62ba;
 }
 
 html, body {
@@ -18,11 +19,12 @@ html, body {
 
 article {
   margin: 0 auto;
-  max-width: min(700px, 90%);
+  width: 90%;
+  max-width: 700px;
 }
 
 h1 { font-size: 2em; line-height: initial; }
-h2 { font-size: 1.5em; }
+h2 { font-size: 1.4em; }
 h5 { font-size: 0.9em; }
 
 code {
@@ -33,7 +35,7 @@ code {
   margin: 2em 0;
   padding: 2em 2em 1em 2em;
   position: relative;
-  white-space: pre;
+  white-space: pre-wrap;
 }
 
 code .title {
@@ -47,13 +49,18 @@ code .title {
   top: 0;
 }
 
+a {
+  color: var(--link-fg-color);
+  font-style: italic;
+}
+
 .header-link,
 .header-link:active {
-  color: inherit;
   font-size: 1em;
   font-weight: 100;
   opacity: 0.5;
   text-decoration: none;
+  margin-right: .1em;
 }
 
 .header-link:hover {
