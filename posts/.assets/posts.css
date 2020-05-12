@@ -52,6 +52,7 @@ code .title {
 a {
   color: var(--link-fg-color);
   font-style: italic;
+  letter-spacing: 2px;
 }
 
 .header-link,
