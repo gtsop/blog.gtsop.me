@@ -16,15 +16,14 @@
 
       <h2>UI configuration</h2>
 
-      <code>
-        <p class="file">/etc/jitsi/meet/<your-instance>-config.js</p>
+      <code><p class="file">/etc/jitsi/meet/&lt;your-instance&gt;-config.js</p>
+
 // The following options reduce the client's CPU usage
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
 
-// The following options reduce the overall network bandwidth and
-// consequently the CPU usage
+// The following options reduce the overall network bandwidth and consequently the CPU usage
 enableLayerSuspension: true,
 resolution: 360,
 maxFps: 10,
@@ -42,8 +41,7 @@ constraints: {
   }
 }
 
-// These options will prevent the server from increased load when
-// a lot of people join in at once.
+// These options will prevent the server from increased load when a lot of people join in at once.
 startAudioMuted: 1,
 startVideoMuted: 1,
       </code>

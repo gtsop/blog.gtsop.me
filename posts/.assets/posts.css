@@ -3,6 +3,8 @@
   --fg-color: #8386a5;
   --code-bg-color: #15151d;
   --code-fg-color: white;
+  --code-title-bg-color: #1f1f2e;
+  --code-title-fg-color: #ffc04c;
 }
 
 html, body {
@@ -14,9 +16,15 @@ html, body {
   line-height: 1.7;
 }
 
+article {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
 h2 {
   font-size: 1.8em;
 }
+
 p {
   font-size: 1.1em;
 }
@@ -28,4 +36,14 @@ code {
   display: block;
   font-size: 0.8em;
   white-space: pre;
+}
+
+code .title {
+  background-color: var(--code-title-bg-color);
+  color: var(--code-title-fg-color);
+  left: 0;
+  padding: .5em 1em;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
