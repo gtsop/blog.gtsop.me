@@ -46,3 +46,17 @@ code .title {
   right: 0;
   top: 0;
 }
+
+.header-link,
+.header-link:active {
+  color: inherit;
+  font-size: 1em;
+  font-weight: 100;
+  opacity: 0.5;
+  text-decoration: none;
+}
+
+.header-link:hover {
+  opacity: 1;
+}
+
