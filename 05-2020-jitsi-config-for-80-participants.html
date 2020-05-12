@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1>Configure Jitsi Meet for 80+ participants</h1>
+    <h5>Posted on: <time datetime="2020-05-12">12/05/2020</time></h5>
 
     <p>
     A default Jitsi Meet installation will run into performance bottlenecks, mostly on the client side. Here is a list of configuration steps you can take to increase the number of participants while making sure your meeting runs smoothly
@@ -13,59 +14,65 @@
     <h2>UI configuration</h2>
 
     <p>
-    Open up <pre>/etc/jitsi/meet/<your-instance>-config.js</pre> and modify the following:
+    Open up <strong>/etc/jitsi/meet/<your-instance>-config.js</strong> and modify the following:
     </p>
 
-    <ul>
-      <li>disableAudioLevels: true</li>
-      <li>enableNoAudioDetection: false</li>
-      <li>enableNoisyMicDetection: false</li>
-      <li>resolution: 360</li>
-      <li>maxFps: 10</li>
-      <li>
-        <pre>
-        constraints: {
-          video: {
-            frameRate: {
-              max: 10,
-              min: 5
-            },
-            height: {
-              ideal: 360,
-              max: 360,
-              min: 120
-            }
-        }
-        </pre>
-      </li>
-      <li>enableLayerSuspension: true</li>
-      <li>startAudioMuted: 1</li>
-      <li>startVideoMuted: 1</li>
-      <li>requireDisplayName: true</li>
-    </ul>
+    <pre>
+      // The following options reduce the client's CPU usage
+      disableAudioLevels: true,
+      enableNoAudioDetection: false,
+      enableNoisyMicDetection: false,
+
+      // The following options reduce the overall network bandwidth and
+      // consequently the CPU usage
+      enableLayerSuspension: true,
+      resolution: 360,
+      maxFps: 10,
+      constraints: {
+        video: {
+          frameRate: {
+            max: 10,
+            min: 5
+          },
+          height: {
+            ideal: 360,
+            max: 360,
+            min: 120
+          }
+      },
+
+      // These options will prevent the server from increased load when
+      // a lot of people join in at once.
+      startAudioMuted: 1,
+      startVideoMuted: 1,
+    </pre>
 
     <p>
-    Open up <pre>/usr/share/jitsi-meet/interface_config.js</pre> and modify the following.
+    Open up <strong>/usr/share/jitsi-meet/interface_config.js</strong> and modify the following.
     </p>
 
-    <ul>
-      <li>DEFAULT_REMOTE_DISPLAY_NAME: 'Guest'</li>
-      <li>SET_FILMSTRIP_ENABLED: false</li>
-      <li>DISABLE_VIDEO_BACKGROUND: true</li>
-      <li>SHOW_JITSI_WATERMARK: false</li>
-      <li>SHOW_WATERMARK_FOR_GUESTS: false</li>
-      <li>DISABLE_FOXUS_INDICATOR: true</li>
-      <li>DISABLE_DOMINANT_SPEAKER_INDICATOR: true</li>
-      <li>DISABLE_JOIN_LEAVE_NOTIFICATIONS: true</li>
-    </ul>
+    <pre>
+      // Client CPU cycles saving options
+      SET_FILMSTRIP_ENABLED: false,
+      DISABLE_VIDEO_BACKGROUND: true,
+      DISABLE_FOCUS_INDICATOR: true,
+      DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
+
+      // Optional, will help you if you're expecting a lot of people
+      // to join/leave the conversation
+      DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
+    </pre>
+
+    <h2>Videobridge logging</h2>
 
     <p>
-    Open up <pre>/etc/jitsi/videobridge/logging.properties</pre> and modify the following.
+    Open up <strong>/etc/jitsi/videobridge/logging.properties</strong> and modify the following.
     </p>
 
-    <ul>
-      <li>.level=WARNING</li>
-      <li>java.util.logging.FileHandler.level = OFF</li>
-    </ul>
+    <pre>
+      .level=WARNING
+
+      java.util.logging.FileHandler.level = OFF
+    </pre>
   </body>
 </html>
