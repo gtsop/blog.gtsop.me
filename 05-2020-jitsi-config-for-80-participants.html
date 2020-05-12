@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>gtsop::blog::configure jitsi for 80+ participants</title>
+  </head>
+  <body>
+    <h1>Configure Jitsi Meet for 80+ participants</h1>
+
+    <p>
+    A default Jitsi Meet installation will run into performance bottlenecks, mostly on the client side. Here is a list of configuration steps you can take to increase the number of participants while making sure your meeting runs smoothly
+    </p>
+
+    <h2>UI configuration</h2>
+
+    <p>
+    Open up <pre>/etc/jitsi/meet/<your-instance>-config.js</pre> and modify the following:
+    </p>
+
+    <ul>
+      <li>disableAudioLevels: true</li>
+      <li>enableNoAudioDetection: false</li>
+      <li>enableNoisyMicDetection: false</li>
+      <li>resolution: 360</li>
+      <li>maxFps: 10</li>
+      <li>
+        <pre>
+        constraints: {
+          video: {
+            frameRate: {
+              max: 10,
+              min: 5
+            },
+            height: {
+              ideal: 360,
+              max: 360,
+              min: 120
+            }
+        }
+        </pre>
+      </li>
+      <li>enableLayerSuspension: true</li>
+      <li>startAudioMuted: 1</li>
+      <li>startVideoMuted: 1</li>
+      <li>requireDisplayName: true</li>
+    </ul>
+
+    <p>
+    Open up <pre>/usr/share/jitsi-meet/interface_config.js</pre> and modify the following.
+    </p>
+
+    <ul>
+      <li>DEFAULT_REMOTE_DISPLAY_NAME: 'Guest'</li>
+      <li>SET_FILMSTRIP_ENABLED: false</li>
+      <li>DISABLE_VIDEO_BACKGROUND: true</li>
+      <li>SHOW_JITSI_WATERMARK: false</li>
+      <li>SHOW_WATERMARK_FOR_GUESTS: false</li>
+      <li>DISABLE_FOXUS_INDICATOR: true</li>
+      <li>DISABLE_DOMINANT_SPEAKER_INDICATOR: true</li>
+      <li>DISABLE_JOIN_LEAVE_NOTIFICATIONS: true</li>
+    </ul>
+
+    <p>
+    Open up <pre>/etc/jitsi/videobridge/logging.properties</pre> and modify the following.
+    </p>
+
+    <ul>
+      <li>.level=WARNING</li>
+      <li>java.util.logging.FileHandler.level = OFF</li>
+    </ul>
+  </body>
+</html>
