@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Jitsi Meet: Performance tuning</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href=".assets/posts.css">
-  </head>
-  <body>
-    <article>
-      <h1>Jitsi Meet: performance tuning</h1>
-      <h5>Posted on: <time datetime="2020-05-12">12/05/2020</time></h5>
+<head>
+  <title>Jitsi Meet: Performance tuning (70+ participants)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href=".assets/posts.css">
+</head>
+<body>
+<article>
 
-      <p>
-      A default Jitsi Meet installation will run into performance bottlenecks, mostly on the client side. Here is a list of configuration steps you can take to increase the number of participants while making sure your meeting runs smoothly
-      </p>
+<h1>Jitsi Meet: Performance tuning (70+ participants)</h1>
+<h5>Posted on: <time datetime="2020-05-12">12/05/2020</time></h5>
 
-      <h2>
-        <a class="header-link" name="ui-configuration" href="#ui-configuration">#</a>
-        UI configuration
-      </h2>
+<p>
+If you've setup your own Jitsi Meet instance (<a href="https://nerdonthestreet.com/episode/tech/host-a-jitsi-meet-server">like Jacob does here</a>), you have realised there are some performance issues when more than a handfull of people join the same room.
+</p>
 
-      <code><p class="title">/etc/jitsi/meet/your.domain-config.js</p>
+<p>
+Bellow is a collection of configuration tweaks I managed to find digging through the internet which will help you lower the used resources (mainly on the client side) thus provide a better experience to your users.
+</p>
+
+<p>
+Using this configuration I have successfully hosted a) a conference with 30 people with their cameras turned on and b) a conference with 75+ people durring which only 2-3 cameras where turned on at a given moment.
+</p>
+
+<h2>
+<a class="header-link" name="client-config" href="#client-config">#</a>
+Client configuration:
+</h2>
+
+<code><p class="title">/etc/jitsi/meet/your.domain-config.js</p>
+// Disable features to decrease CPU usage
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
 
+// Lower bandwidth usage to decrease both latency and CPU usage
 enableLayerSuspension: true,
 resolution: 360,
 maxFps: 10,
@@ -39,33 +50,37 @@ constraints: {
       min: 120
     }
   }
-}
+},
 
+// This is really to help the server. Many of people joining the room
+// at once causes a performance hit, this helps you prevent it
 startAudioMuted: 1,
 startVideoMuted: 1,
 </code>
 
-      <code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
+<code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
+// Disable UI features to decrease CPU usage
 SET_FILMSTRIP_ENABLED: false,
-
 DISABLE_VIDEO_BACKGROUND: true,
+
 DISABLE_FOCUS_INDICATOR: true,
 DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
 
 DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 </code>
 
-      <h2>
-        <a class="header-link" name="videobridge-logging" href="#videobridge-logging">#</a>
-        Videobridge logging
-      </h2>
+<h2>
+<a class="header-link" name="videobridge-logging" href="#videobridge-logging">#</a>
+Jitsi Videobridge logging
+</h2>
 
-      <code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
+<code><p class="title">/etc/jitsi/videobridge/logging.properties</p>
+// These will reduce your I/O on the disk
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
 </code>
 
-    </article>
-  </body>
+</article>
+</body>
 </html>
