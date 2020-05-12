@@ -17,12 +17,10 @@
       <h2>UI configuration</h2>
 
       <code><p class="title">/etc/jitsi/meet/&lt;your-instance&gt;-config.js</p>
-// The following options reduce the client's CPU usage
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
 
-// The following options reduce the overall network bandwidth and consequently the CPU usage
 enableLayerSuspension: true,
 resolution: 360,
 maxFps: 10,
@@ -40,20 +38,17 @@ constraints: {
   }
 }
 
-// These options will prevent the server from increased load when a lot of people join in at once.
 startAudioMuted: 1,
 startVideoMuted: 1,
 </code>
 
       <code><p class="title">/usr/share/jitsi-meet/interface_config.js</p>
-// Client CPU cycles saving options
 SET_FILMSTRIP_ENABLED: false,
+
 DISABLE_VIDEO_BACKGROUND: true,
 DISABLE_FOCUS_INDICATOR: true,
 DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
 
-// Optional, will help you if you're expecting a lot of people
-// to join/leave the conversation
 DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
 </code>
 
