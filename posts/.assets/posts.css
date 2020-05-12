@@ -27,12 +27,15 @@ h1 { font-size: 2em; line-height: initial; }
 h2 { font-size: 1.4em; }
 h5 { font-size: 0.9em; }
 
+
 .code-file .title {
   background-color: var(--code-title-bg-color);
   color: var(--code-title-fg-color);
   margin: 0;
   display: block;
   padding: .5em 1em;
+  white-space: pre-wrap;
+  margin: 2em 0;
 }
 
 .code-file code {
@@ -40,7 +43,6 @@ h5 { font-size: 0.9em; }
   color: var(--code-fg-color);
   display: block;
   font-size: 0.8em;
-  margin: 2em 0;
   padding: 2em 2em 1em 2em;
   position: relative;
   white-space: pre-wrap;
