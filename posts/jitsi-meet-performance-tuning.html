@@ -14,15 +14,32 @@
 <h5>Posted on: <time datetime="2020-05-12">12/05/2020</time></h5>
 
 <p>
-So, you set up your own Jitsi Meet instance, <a href="https://nerdonthestreet.com/episode/tech/host-a-jitsi-meet-server" rel="noreferrer" target="_blank">just like Jacob did</a>, then a dozen of people join the same room and the conference performance starts to suffer.
+So, you set up your own Jitsi Meet instance,
+<a
+  href="https://nerdonthestreet.com/episode/tech/host-a-jitsi-meet-server"
+  rel="noreferrer"
+  target="_blank"
+>
+  just like Jacob did
+</a>,
+then a dozen of people joined a single room and the conference performance went downhill.
 </p>
 
 <p>
-Bellow is a collection of config tweaks I found on <a href="https://community.jitsi.org" rel="noreferrer" target="_blank">Jitsi Community Forum</a> which will improve the situation. Using these, I have successfully hosted a couple of conferences (one at a time):
+Here is a collection of config tweaks found on the
+<a
+  href="https://community.jitsi.org"
+  rel="noreferrer"
+  target="_blank"
+>
+  Jitsi Community Forum
+</a>
+which will improve the situation. Using these, I have successfully hosted a couple of conferences with:
 </p>
+
 <ul>
-  <li>30 participants, cameras &amp; mics turned on</li>
-  <li>75+ participants, 2-3 cameras &amp; mics turned on at any given moment.</li>
+  <li>30 participants, all cameras turned on</li>
+  <li>75+ participants, 2-3 cameras turned on at any given moment</li>
 </ul>
 
 <p>
@@ -35,12 +52,12 @@ Client side config (jitsi-meet)
 </h2>
 
 <p>
-These disable features and lower bandwidth to reduce CPU usage and latency
+The following config options disable features and lower bandwidth to reduce CPU usage and latency.
 </p>
 
 <div class="code-file">
 <span class="title">/etc/jitsi/meet/your.domain-config.js</span>
-<code>
+<pre class="code">
 disableAudioLevels: true,
 enableNoAudioDetection: false,
 enableNoisyMicDetection: false,
@@ -66,12 +83,12 @@ constraints: {
 // in case multiple people join at once
 startAudioMuted: 1,
 startVideoMuted: 1,
-</code>
+</pre>
 </div>
 
 <div class="code-file">
 <span class="title">/usr/share/jitsi-meet/interface_config.js</span>
-<code>
+<pre class="code">
 SET_FILMSTRIP_ENABLED: false,
 DISABLE_VIDEO_BACKGROUND: true,
 
@@ -79,7 +96,7 @@ DISABLE_FOCUS_INDICATOR: true,
 DISABLE_DOMINANT_SPEAKER_INDICATOR: true,
 
 DISABLE_JOIN_LEAVE_NOTIFICATIONS: true,
-</code>
+</pre>
 </div>
 
 <h2>
@@ -93,11 +110,11 @@ This will reduce logging to lower disk I/O operations
 
 <div class="code-file">
 <span class="title">/etc/jitsi/videobridge/logging.properties</span>
-<code>
+<pre class="code">
 .level=WARNING
 
 java.util.logging.FileHandler.level = OFF
-</code>
+</pre>
 </div>
 
 <h2>
@@ -107,12 +124,20 @@ Resources
 
 <ul>
   <li>
-    <a href="https://community.jitsi.org/t/adjust-resolution/23984/2" rel="noreferrer" target="_blank">
+    <a
+      href="https://community.jitsi.org/t/adjust-resolution/23984/2"
+      rel="noreferrer"
+      target="_blank"
+    >
       Jitsi Community Forum: Adjust resolution
     </a>
   </li>
   <li>
-    <a href="https://community.jitsi.org/t/reducing-resource-usage-to-improve-performance-both-client-side-and-server-side/39891" rel="noreferrer" target="_blank">
+    <a
+      href="https://community.jitsi.org/t/reducing-resource-usage-to-improve-performance-both-client-side-and-server-side/39891"
+      rel="noreferrer"
+      target="_blank"
+    >
       Jitsi Community Forum: Reducing resource usage to improve performance (both client-side and server-side)
     </a>
   </li>

@@ -40,7 +40,7 @@ h5 { font-size: 0.9em; }
   padding: .5em 1em;
 }
 
-.code-file code {
+.code-file .code {
   background-color: var(--code-bg-color);
   color: var(--code-fg-color);
   display: block;
