@@ -27,6 +27,9 @@ h1 { font-size: 2em; line-height: initial; }
 h2 { font-size: 1.4em; }
 h5 { font-size: 0.9em; }
 
+ul li {
+  margin-bottom: .2em;
+}
 
 .code-file {
   margin: 2em 0;
